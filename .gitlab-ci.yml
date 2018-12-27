@@ -1,0 +1,24 @@
+# This file is a template, and might need editing before it works on your project.
+variables:
+  # Please edit to your GitLab project
+  MAVEN_CLI_OPTS: "clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true"
+cache:
+  paths:
+    - target/
+
+before_script:
+    - echo `id`
+    - echo $CI_PROJECT_DIR
+
+stages:
+    - deploy
+
+deploy:
+    stage: deploy
+    only:
+      - develop
+      - fujian
+    tags:
+      - docker
+    script:
+      - 'mvn $MAVEN_CLI_OPTS -U'

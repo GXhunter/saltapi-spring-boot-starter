@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.github.gxhunter.saltapi.config.SaltApiAutoConfig,\
+  com.github.gxhunter.saltapi.entity.SaltApiInfo
