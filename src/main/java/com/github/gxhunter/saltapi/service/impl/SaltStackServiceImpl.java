@@ -1,11 +1,13 @@
 package com.github.gxhunter.saltapi.service.impl;
 
+import com.github.gxhunter.saltapi.SaltConstant;
 import com.github.gxhunter.saltapi.cache.ILoginCache;
 import com.github.gxhunter.saltapi.dto.request.SaltApiExecRequest;
 import com.github.gxhunter.saltapi.dto.response.AsyncExecResponse;
 import com.github.gxhunter.saltapi.dto.response.BaseSaltApiResponse;
 import com.github.gxhunter.saltapi.dto.response.LoginResponse;
 import com.github.gxhunter.saltapi.entity.SaltApiInfo;
+import com.github.gxhunter.saltapi.enums.ClientType;
 import com.github.gxhunter.saltapi.service.ISaltStackService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpEntity;
@@ -15,14 +17,13 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
-import static com.github.gxhunter.saltapi.SaltConstant.*;
 /**
  * @author 树荫下的天空
  * @date 2018/11/28 17:48
  * 没有在yml注入salt信息，注入此类
  */
 @Slf4j
-public class SaltStackServiceImpl implements ISaltStackService{
+public class SaltStackServiceImpl implements ISaltStackService, SaltConstant {
     private RestTemplate mRestTemplate;
     private ILoginCache mLoginResponseManage;
 

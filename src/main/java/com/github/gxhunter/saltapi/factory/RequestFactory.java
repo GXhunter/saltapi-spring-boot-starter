@@ -1,6 +1,8 @@
 package com.github.gxhunter.saltapi.factory;
 
 import com.github.gxhunter.saltapi.dto.request.SaltApiExecRequest;
+import com.github.gxhunter.saltapi.enums.ClientType;
+import com.github.gxhunter.saltapi.enums.ExprForm;
 import com.github.gxhunter.saltapi.enums.ISaltModule;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -18,7 +20,7 @@ public class RequestFactory{
     /**
      * tgt匹配规则
      */
-    private String exprForm;
+    private ExprForm exprForm;
     /**
      * SaltStack模块名称
      */
@@ -35,13 +37,13 @@ public class RequestFactory{
     /**
      *
      */
-    private String client;
+    private ClientType client;
 
     public static RequestFactory getInstance(){
         return new RequestFactory();
     }
 
-    public RequestFactory exprForm(String exprFormEnum){
+    public RequestFactory exprForm(ExprForm exprFormEnum){
         this.exprForm = exprFormEnum;
         return this;
     }
@@ -76,7 +78,7 @@ public class RequestFactory{
      * @param client
      * @return
      */
-    public RequestFactory client(String client){
+    public RequestFactory client(ClientType client){
         this.client = client;
         return this;
     }

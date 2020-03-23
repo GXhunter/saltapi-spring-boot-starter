@@ -2,6 +2,8 @@ package com.github.gxhunter.saltapi.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.gxhunter.saltapi.enums.ClientType;
+import com.github.gxhunter.saltapi.enums.ExprForm;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.util.CollectionUtils;
@@ -19,10 +21,7 @@ import java.util.List;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SaltApiExecRequest<T>{
-    /**
-     * 运行方式 定义在：{@link com.github.gxhunter.saltapi.SaltConstant}
-     */
-    private String client;
+    private ClientType client;
 
     /**
      * 执行命令的主机名
@@ -34,7 +33,7 @@ public class SaltApiExecRequest<T>{
     private String fun;
 
     @JsonProperty("expr_form")
-    private String exprForm;
+    private ExprForm exprForm;
 
     /**
      * 方法的参数

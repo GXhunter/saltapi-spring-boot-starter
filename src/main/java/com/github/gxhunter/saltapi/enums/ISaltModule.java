@@ -18,5 +18,5 @@ public interface ISaltModule{
      *
      * @return
      */
-    String getClient();
+    ClientType getClient();
 }
