@@ -6,6 +6,7 @@ import com.github.gxhunter.saltapi.enums.ClientType;
 import com.github.gxhunter.saltapi.enums.ExprForm;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.util.List;
@@ -42,7 +43,7 @@ public class SaltApiExecRequest<T>{
 
     public void setTgt(List<String> tgt){
         if(!CollectionUtils.isEmpty(tgt)){
-            this.tgt = tgt.stream().reduce((a,b) -> a + "," + b).get();
+            this.tgt = StringUtils.join(tgt, ",");
         }
     }
 

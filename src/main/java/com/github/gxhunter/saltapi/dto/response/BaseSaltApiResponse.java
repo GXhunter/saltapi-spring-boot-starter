@@ -24,7 +24,6 @@ public class BaseSaltApiResponse<T>{
      */
     @JsonProperty("return")
     private List<T> returnX;
-
     /**
      * 获取return集合 内第一个对象
      * @return

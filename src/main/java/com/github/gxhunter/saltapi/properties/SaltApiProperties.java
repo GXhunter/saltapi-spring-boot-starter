@@ -1,7 +1,6 @@
-package com.github.gxhunter.saltapi.entity;
+package com.github.gxhunter.saltapi.properties;
 
 import lombok.Data;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +11,8 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @ConfigurationProperties(prefix = "hunter.spring.saltapi")
-public class SaltApiInfo{
+@Component
+public class SaltApiProperties {
     /**
      * 主控机ip
      */
