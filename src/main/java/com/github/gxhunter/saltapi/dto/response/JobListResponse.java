@@ -10,7 +10,7 @@ import java.util.List;
  */
 @Data
 public class JobListResponse<T> extends SyncExecResponse<List<SaltJobDetail<T>>>{
-    /**
+    /*
      * 最终形如：
      * {
      *     "return": [

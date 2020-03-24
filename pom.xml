@@ -20,7 +20,6 @@
         <lombok.version>1.16.20</lombok.version>
         <java.version>1.8</java.version>
         <maven.test.skip>true</maven.test.skip>
-        <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
 
     <dependencies>

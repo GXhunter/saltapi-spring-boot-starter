@@ -1,6 +1,7 @@
 package com.github.gxhunter.saltapi.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ import java.util.List;
  * salt Job详情信息
  * 用作组合，两种最终形态，{@link SingleJobResponse}和{@link JobListResponse}
  */
+@Data
 public class SaltJobDetail<E>{
     @JsonProperty("tgt_type")
     private String tgtType;
