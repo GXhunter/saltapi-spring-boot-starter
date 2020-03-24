@@ -1,5 +1,7 @@
 package com.github.gxhunter.saltapi.config;
 
+import com.github.gxhunter.cache.CacheAutoConfig;
+import com.github.gxhunter.cache.EnableAutoCache;
 import com.github.gxhunter.saltapi.properties.SaltApiProperties;
 import com.github.gxhunter.saltapi.service.ISaltStackClient;
 import com.github.gxhunter.saltapi.service.impl.SaltStackClientImpl;
@@ -8,6 +10,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.client.OkHttp3ClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,6 +21,7 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 @Data
 @SuppressWarnings("all")
+@Import(CacheAutoConfig.class)
 public class SaltApiAutoConfig{
 
     /**

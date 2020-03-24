@@ -5,7 +5,7 @@
 
     <groupId>com.github.gxhunter</groupId>
     <artifactId>saltapi-spring-boot-starter</artifactId>
-    <version>1.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>saltapi-spring-boot-starter</name>
@@ -19,10 +19,12 @@
         <springboot.version>2.0.6.RELEASE</springboot.version>
         <lombok.version>1.16.20</lombok.version>
         <java.version>1.8</java.version>
+        <maven.test.skip>true</maven.test.skip>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
 
     <dependencies>
-      <dependency>
+        <dependency>
             <groupId>com.github.gxhunter</groupId>
             <artifactId>hunter-spring-boot-starter</artifactId>
             <version>1.0.10</version>
@@ -70,6 +72,17 @@
         </dependency>
 
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>gprp</id>
+            <url>http://nexus.4399doc.com:8081/repository/gprp/</url>
+        </repository>
+        <snapshotRepository>
+            <id>gprp-snapshot</id>
+            <url>http://nexus.4399doc.com:8081/repository/gprp-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
     <build>
         <plugins>
             <plugin>

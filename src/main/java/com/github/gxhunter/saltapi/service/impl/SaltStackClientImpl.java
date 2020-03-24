@@ -32,7 +32,7 @@ public class SaltStackClientImpl implements ISaltStackClient, SaltConstant, Cons
     private final SaltApiProperties mSaltApiProperties;
 
     @Override
-    @Cache(timeout = 30,prefix = Context.METHOD_NAME,key =
+    @Cache(timeout = 720, prefix = Context.METHOD_NAME, key =
             "{#saltApiProperties.ip,#saltApiProperties.port,#saltApiProperties.username,#saltApiProperties.password}")
     public LoginResponse login(SaltApiProperties saltApiProperties) {
         String url = String.format("http://%s:%s/login", saltApiProperties.getIp(), saltApiProperties.getPort());
@@ -71,6 +71,11 @@ public class SaltStackClientImpl implements ISaltStackClient, SaltConstant, Cons
                 .exchange(url, HttpMethod.POST, httpEntity, clazz).getBody();
     }
 
+    /**
+     * 缓存30秒登录
+     *
+     * @return
+     */
     @Override
     public LoginResponse login() {
         return login(mSaltApiProperties);
